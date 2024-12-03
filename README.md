@@ -1,26 +1,34 @@
 # Solidity_by_Example_Kevin-Study
 1. Voting
+   
 The following contract is quite complex, but showcases a lot of Solidity’s features. It implements a voting contract. Of course, the main problems of electronic voting is how to assign voting rights to the correct persons and how to prevent manipulation. We will not solve all problems here, but at least we will show how delegated voting can be done so that vote counting is automatic and completely transparent at the same time.
 The idea is to create one contract per ballot, providing a short name for each option. Then the creator of the contract who serves as chairperson will give the right to vote to each address individually.
 The persons behind the addresses can then choose to either vote themselves or to delegate their vote to a person they trust.
 At the end of the voting time, winningProposal() will return the proposal with the largest number of votes.
 
 2. Blind Auction
+
 In this section, we will show how easy it is to create a completely blind auction contract on Ethereum. We will start with an open auction where everyone can see the bids that are made and then extend this contract into a blind auction where it is not possible to see the actual bid until the bidding period ends.
+
 2.1. Simple Open Auction
+
 The general idea of the following simple auction contract is that everyone can send their bids during a bidding period. The bids already include sending money / Ether in order to bind the bidders to their bid. If the highest bid is raised, the previous highest bidder gets their money back. After the end of the bidding period, the contract has to be called manually for the beneficiary to receive their money - contracts cannot activate themselves.
+
 2.2. Blind Auction
+
 The previous open auction is extended to a blind auction in the following. The advantage of a blind auction is that there is no time pressure towards the end of the bidding period. Creating a blind auction on a transparent computing platform might sound like a contradiction, but cryptography comes to the rescue.
 During the bidding period, a bidder does not actually send their bid, but only a hashed version of it. Since it is currently considered practically impossible to find two (sufficiently long) values whose hash values are equal, the bidder commits to the bid by that. After the end of the bidding period, the bidders have to reveal their bids: They send their values unencrypted and the contract checks that the hash value is the same as the one provided during the bidding period.
 Another challenge is how to make the auction binding and blind at the same time: The only way to prevent the bidder from just not sending the money after they won the auction is to make them send it together with the bid. Since value transfers cannot be blinded in Ethereum, anyone can see the value.
 The following contract solves this problem by accepting any value that is larger than the highest bid. Since this can of course only be checked during the reveal phase, some bids might be invalid, and this is on purpose (it even provides an explicit flag to place invalid bids with high value transfers): Bidders can confuse competition by placing several high or low invalid bids.
 
 3. Safe Remote Purchase
+
 Purchasing goods remotely currently requires multiple parties that need to trust each other. The simplest configuration involves a seller and a buyer. The buyer would like to receive an item from the seller and the seller would like to get money (or an equivalent) in return. The problematic part is the shipment here: There is no way to determine for sure that the item arrived at the buyer.
 There are multiple ways to solve this problem, but all fall short in one or the other way. In the following example, both parties have to put twice the value of the item into the contract as escrow. As soon as this happened, the money will stay locked inside the contract until the buyer confirms that they received the item. After that, the buyer is returned the value (half of their deposit) and the seller gets three times the value (their deposit plus the value). The idea behind this is that both parties have an incentive to resolve the situation or otherwise their money is locked forever.
 This contract of course does not solve the problem, but gives an overview of how you can use state machine-like constructs inside a contract.
 
 4. Creating and verifying signatures
+
 Imagine Alice wants to send some Ether to Bob, i.e. Alice is the sender and Bob is the recipient.
 Alice only needs to send cryptographically signed messages off-chain (e.g. via email) to Bob and it is similar to writing checks.
 Alice and Bob use signatures to authorise transactions, which is possible with smart contracts on Ethereum. Alice will build a simple smart contract that lets her transmit Ether, but instead of calling a function herself to initiate a payment, she will let Bob do that, and therefore pay the transaction fee.
@@ -65,7 +73,9 @@ Extracting the Signature Parameters
 Signatures produced by web3.js are the concatenation of r, s and v, so the first step is to split these parameters apart. You can do this on the client-side, but doing it inside the smart contract means you only need to send one signature parameter rather than three. Splitting apart a byte array into its constituent parts is a mess, so we use inline assembly to do the job in the splitSignature function (the third function in the full contract at the end of this section).
 Computing the Message Hash
 The smart contract needs to know exactly what parameters were signed, and so it must recreate the message from the parameters and use that for signature verification. The functions prefixed and recoverSigner do this in the claimPayment function.
+
 5. A Simple Payment Channel
+
 What is a Payment Channel?
 Payment channels allow participants to make repeated transfers of Ether without using transactions. This means that you can avoid the delays and fees associated with transactions. We are going to explore a simple unidirectional payment channel between two parties (Alice and Bob). It involves three steps:
 Alice funds a smart contract with Ether. This “opens” the payment channel.
@@ -139,5 +149,7 @@ function isValidSignature(contractAddress, amount, signature, expectedSigner) {
     return signer.toLowerCase() ==
         ethereumjs.Util.stripHexPrefix(expectedSigner).toLowerCase();
 }
+
 6. Modular Contracts
+
 A modular approach to building your contracts helps you reduce the complexity and improve the readability which will help to identify bugs and vulnerabilities during development and code review. If you specify and control the behaviour or each module in isolation, the interactions you have to consider are only those between the module specifications and not every other moving part of the contract. In the example below, the contract uses the move method of the Balances library to check that balances sent between addresses match what you expect. In this way, the Balances library provides an isolated component that properly tracks balances of accounts. It is easy to verify that the Balances library never produces negative balances or overflows and the sum of all balances is an invariant across the lifetime of the contract.
