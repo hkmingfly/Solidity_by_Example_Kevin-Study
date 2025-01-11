@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Modular Contracts.sol": "Balances"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/Modular Contracts.sol": {
+			"keccak256": "0x8dd07ee1cdbf12db29f872abd26fe7779a3b0bdd6a5d59f8f4b5edbecc24b241",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7903f42e3f705c8e1401f6b7e27e4f2d609d4846b39a01f98b5c076f9f9fa3da",
+				"dweb:/ipfs/QmcKtnegoNzEAZaChMMTJ5T4QQpLqHasA61xe9TwnTjEWZ"
+			]
+		}
+	},
+	"version": 1
+}

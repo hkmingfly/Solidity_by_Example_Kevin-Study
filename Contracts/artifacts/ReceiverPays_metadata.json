@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "claimPayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shutdown",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"shutdown()": {
+					"notice": "destroy the contract and reclaim the leftover funds."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Signature.sol": "ReceiverPays"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/Signature.sol": {
+			"keccak256": "0x429bde92194721e7f5b8e52725dd13e5729fa83da23faf2f492b447693572c8b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f615d5d0aa5e3a931e17536a91422663578692328319928d35ee1086dcf7e37c",
+				"dweb:/ipfs/QmesiPnQ2FMuiLatn6SD88E5nNjVgr1zZHsHTGJAA3Hwqo"
+			]
+		}
+	},
+	"version": 1
+}
