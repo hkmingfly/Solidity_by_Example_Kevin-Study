@@ -6,6 +6,7 @@ contract BlindAuction {
         uint deposit;
     }
 // testing my changes
+// I changed again.
     address payable public beneficiary;
     uint public biddingEnd;
     uint public revealEnd;

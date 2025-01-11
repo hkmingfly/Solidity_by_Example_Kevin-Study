@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.28+commit.7893614a"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -285,11 +285,11 @@
 	},
 	"sources": {
 		"Contracts/Blind Auction.sol": {
-			"keccak256": "0x05afdd4f8cdd4a67f5591d10084925dfa6459ddd55d7471cfe0c8504a18f41b7",
+			"keccak256": "0xb520df791704b01da098a209e72a07e0d67bb6bdbdf9785bded2a346c2b6cd55",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://66844e5353287f7edbf4348bfa5e1f091d8ae1f8c472e8dfb38fe038fd85a394",
-				"dweb:/ipfs/QmUM5ec2xvbbhwACd1tsarTAynaWVkDnbb5pNAVJmobZy6"
+				"bzz-raw://fa01489874c4fc04c40fbf8608f3152ab9213341e08bee5acc333d0f8c16cb5e",
+				"dweb:/ipfs/QmceJ57FWe4sSi9dSfc7x9vYeKfSXKLoHzaBcpWWe1pYUf"
 			]
 		}
 	},
