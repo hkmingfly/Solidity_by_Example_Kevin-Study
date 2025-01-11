@@ -1,0 +1,97 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "beforeAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkGetOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "contract Owner",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tests/2_Owner_test.sol": "testSuite"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/2_Owner.sol": {
+			"keccak256": "0x989ea8185e08462c2d12f741a2eb47e441e7ecedf7df6e86f49c940c798f852c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a642b9590bad784e9635555a9e7043ccca103003686cce6455c80c7a1f501cd6",
+				"dweb:/ipfs/QmdhjoLC3nypCw1P53BV1FeaeKLj3nrCEQXpDGnhcC6jjW"
+			]
+		},
+		"remix_accounts.sol": {
+			"keccak256": "0xab088ffd1cd1033f54c2486f151b5d02281a3b76724c8e6f48479c25a4f7809e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5ddaf9976b1838f7028cbedfaf7f6e1cf8c898e100221176ff1406ee8b599f23",
+				"dweb:/ipfs/QmX2FYLXYyo5Cn55ZX2CfngpscSh4mQhcMVzQdQsh2vqcG"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		},
+		"tests/2_Owner_test.sol": {
+			"keccak256": "0x95d72347352847515fcd9c1c9348465c7edbf2bfff4bd6c8105290321ed45bb9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://543424a16eadb8cf60c192c5c985af29341e5e8b0f1a67a5bb8f5511f6dd0ecb",
+				"dweb:/ipfs/QmPxEFyHuWf7Ca1KX4ahexjAD4cknqamHv6fkY57srU9ix"
+			]
+		}
+	},
+	"version": 1
+}
