@@ -5,7 +5,7 @@ contract BlindAuction {
         bytes32 blindedBid;
         uint deposit;
     }
-
+// testing my changes
     address payable public beneficiary;
     uint public biddingEnd;
     uint public revealEnd;

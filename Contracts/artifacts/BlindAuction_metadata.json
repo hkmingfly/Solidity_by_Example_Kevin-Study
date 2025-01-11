@@ -285,11 +285,11 @@
 	},
 	"sources": {
 		"Contracts/Blind Auction.sol": {
-			"keccak256": "0xe8cc553b7b0387cf97b5a7719399ac1ce0a82c3100a9b9be8eb35606d1e75726",
+			"keccak256": "0x05afdd4f8cdd4a67f5591d10084925dfa6459ddd55d7471cfe0c8504a18f41b7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d7d29375b430978712efd09078324f74bf9577e2b67d4c82b76a700581b38736",
-				"dweb:/ipfs/QmT1Hbhew2jiuCVPXUNcLgDR5TPVkaCrb8od7VBSNjj2v3"
+				"bzz-raw://66844e5353287f7edbf4348bfa5e1f091d8ae1f8c472e8dfb38fe038fd85a394",
+				"dweb:/ipfs/QmUM5ec2xvbbhwACd1tsarTAynaWVkDnbb5pNAVJmobZy6"
 			]
 		}
 	},
